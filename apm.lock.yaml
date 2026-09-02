@@ -1,0 +1,103 @@
+lockfile_version: '1'
+generated_at: '2026-09-02T05:38:47.963982+00:00'
+apm_version: 0.28.0
+dependencies:
+- repo_url: webmaxru/web-ai-agent-skills
+  name: webmcp
+  host: github.com
+  resolved_commit: adc6b11f8ba107d085851e307dd0ff1d389611c0
+  version: unknown
+  virtual_path: skills/webmcp
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/webmcp
+  - .agents/skills/webmcp/SKILL.md
+  - .agents/skills/webmcp/assets/model-context-registry.template.ts
+  - .agents/skills/webmcp/references/compatibility.md
+  - .agents/skills/webmcp/references/declarative-api.md
+  - .agents/skills/webmcp/references/troubleshooting.md
+  - .agents/skills/webmcp/references/webmcp-reference.md
+  - .agents/skills/webmcp/scripts/find-webmcp-targets.mjs
+  deployed_file_hashes:
+    .agents/skills/webmcp/SKILL.md: sha256:3de895153636a982bc4705231259ff15774250f46b24b872e2c46ba1f63efc94
+    .agents/skills/webmcp/assets/model-context-registry.template.ts: sha256:41b52d1286f2a03498a427ee61be7cfc340b72273bcd142fdc1deda0ebca73d3
+    .agents/skills/webmcp/references/compatibility.md: sha256:94c819756624e477d72ec60079ac4dd1db139ec0775832de3a1599624c1f14b4
+    .agents/skills/webmcp/references/declarative-api.md: sha256:7dbe5af5f897c49bfa8cba36a047711439311614bc6d337b4662aabfeaa15524
+    .agents/skills/webmcp/references/troubleshooting.md: sha256:21be059e4191e1d6c71ec4dfda604d435275c08631b03d8473f5eaac3a4ef470
+    .agents/skills/webmcp/references/webmcp-reference.md: sha256:36088c4b310f17dbef5544251e33dd070bfc7be446733a033daa50858352151a
+    .agents/skills/webmcp/scripts/find-webmcp-targets.mjs: sha256:9ef71c26493d193729cd981514032370af1285ad903cd91a8942f5d56779234b
+  content_hash: sha256:26f27f33f4149871ad76d5dca3c2cc44be086daaa3451b45fc2bd88fa103b32b
+deployments:
+- kind: project-relative
+  target: codex
+  value: .agents/skills/webmcp
+  runtime: null
+  scope: project
+  owners:
+  - webmaxru/web-ai-agent-skills/skills/webmcp
+  active_owner: webmaxru/web-ai-agent-skills/skills/webmcp
+  content_hash: null
+- kind: project-relative
+  target: codex
+  value: .agents/skills/webmcp/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - webmaxru/web-ai-agent-skills/skills/webmcp
+  active_owner: webmaxru/web-ai-agent-skills/skills/webmcp
+  content_hash: sha256:3de895153636a982bc4705231259ff15774250f46b24b872e2c46ba1f63efc94
+- kind: project-relative
+  target: codex
+  value: .agents/skills/webmcp/assets/model-context-registry.template.ts
+  runtime: null
+  scope: project
+  owners:
+  - webmaxru/web-ai-agent-skills/skills/webmcp
+  active_owner: webmaxru/web-ai-agent-skills/skills/webmcp
+  content_hash: sha256:41b52d1286f2a03498a427ee61be7cfc340b72273bcd142fdc1deda0ebca73d3
+- kind: project-relative
+  target: codex
+  value: .agents/skills/webmcp/references/compatibility.md
+  runtime: null
+  scope: project
+  owners:
+  - webmaxru/web-ai-agent-skills/skills/webmcp
+  active_owner: webmaxru/web-ai-agent-skills/skills/webmcp
+  content_hash: sha256:94c819756624e477d72ec60079ac4dd1db139ec0775832de3a1599624c1f14b4
+- kind: project-relative
+  target: codex
+  value: .agents/skills/webmcp/references/declarative-api.md
+  runtime: null
+  scope: project
+  owners:
+  - webmaxru/web-ai-agent-skills/skills/webmcp
+  active_owner: webmaxru/web-ai-agent-skills/skills/webmcp
+  content_hash: sha256:7dbe5af5f897c49bfa8cba36a047711439311614bc6d337b4662aabfeaa15524
+- kind: project-relative
+  target: codex
+  value: .agents/skills/webmcp/references/troubleshooting.md
+  runtime: null
+  scope: project
+  owners:
+  - webmaxru/web-ai-agent-skills/skills/webmcp
+  active_owner: webmaxru/web-ai-agent-skills/skills/webmcp
+  content_hash: sha256:21be059e4191e1d6c71ec4dfda604d435275c08631b03d8473f5eaac3a4ef470
+- kind: project-relative
+  target: codex
+  value: .agents/skills/webmcp/references/webmcp-reference.md
+  runtime: null
+  scope: project
+  owners:
+  - webmaxru/web-ai-agent-skills/skills/webmcp
+  active_owner: webmaxru/web-ai-agent-skills/skills/webmcp
+  content_hash: sha256:36088c4b310f17dbef5544251e33dd070bfc7be446733a033daa50858352151a
+- kind: project-relative
+  target: codex
+  value: .agents/skills/webmcp/scripts/find-webmcp-targets.mjs
+  runtime: null
+  scope: project
+  owners:
+  - webmaxru/web-ai-agent-skills/skills/webmcp
+  active_owner: webmaxru/web-ai-agent-skills/skills/webmcp
+  content_hash: sha256:9ef71c26493d193729cd981514032370af1285ad903cd91a8942f5d56779234b

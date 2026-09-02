@@ -1,0 +1,35 @@
+LEAST-PRIVILEGE ACCESS REVIEW WORKBENCH — TARGET RUNTIME 2:40
+
+Alex Morgan's contract ended Friday, but production deploy and customer-data export access remain active in this fully synthetic organization.
+
+The Least-Privilege Access Review Workbench turns that question into a visible review, with every effective permission path explained.
+
+I am asking Codex to investigate through the WebMCP Site Tools registered by this top-level page.
+
+The status confirms nine imperative tools. This is real tool execution; the optional step-through rehearsal only holds the same states for practice.
+
+The fixture contains exactly fifty synthetic users, ten groups, and three applications, with no credentials, secrets, or external APIs.
+
+Codex resolves Alex's offboarding identity and computes four permission paths producing six sensitive capability grants.
+
+The first path is a direct Production Operator role in Atlas Deploy.
+
+The second runs through Contractors, Platform Contributors, and Release Manager, creating non-obvious production approval access.
+
+The membership graph also cycles through Release Observers. Traversal detects that cycle and safely avoids double counting.
+
+The other paths are Alex's personal am-ci-export token and inherited Data Steward access from the Mercury project.
+
+Codex finds the risks and simulates removing all six grants. This simulation changes no permission.
+
+It catches one breakage before staging: Incident Relay still depends on the production rollback capability attached to Alex's role.
+
+Codex revises the plan by reassigning rollback to the dedicated service identity, svc-oncall-relay.
+
+The deterministic result removes exactly five unnecessary grants from Alex and preserves exactly one shared on-call dependency.
+
+Exposure moves from ninety-two to eighteen. Codex previews the delta and stages the review with zero changes before confirmation.
+
+Before I approve, Codex reads the receipt state and correctly reports that no receipt exists.
+
+Now I review the visible plan and activate Confirm staged review. This normal page control is not exposed as a WebMCP tool. Ordinary browser actuation may still reach it under Codex and browser safety confirmation. It commits only the mocked in-memory fixture. Codex reads receipt ARR-2026-0902-0042, then verifies that Alex has zero sensitive grants and rollback belongs to svc-oncall-relay. The Least-Privilege Access Review Workbench is not a production IAM or compliance system. It demonstrates a transparent review pattern with confirmation kept visible and subject to the browser safety workflow.
