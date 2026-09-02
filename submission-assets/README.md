@@ -48,6 +48,10 @@ mocked in-memory fixture, and all identities, applications, tokens, and findings
 synthetic.
 
 The remaining media blocker is a public YouTube video showing real Codex Site
-Tool discovery and calls. A fresh native Codex Site Tool run has not yet been
-captured for this project, so the included storyboard is intentionally not
-presented as that evidence.
+Tool discovery and calls. A fresh GPT-5.6 Sol run completed against the deployed
+top-level page on September 2, 2026. Codex discovered nine Site Tools, traced 4
+effective paths carrying 6 sensitive grants, detected the full-removal rollback
+breakage, staged 5 removals plus 1 reassignment to `svc-oncall-relay`, and
+reported 92 → 18 with no durable mutation or receipt. That run was not
+screen-recorded, so the included storyboard remains rehearsal media rather than
+the required public video evidence.
