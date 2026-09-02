@@ -170,11 +170,9 @@ rehearsal.
 The application has no iframe deployment path and no runtime cross-origin assets.
 
 The Vite build uses `base: "./"`, so generated assets resolve correctly from a
-GitHub Pages project subpath such as
-`https://owner.github.io/webmcp-access-review-workbench/`. The
-`.github/workflows/deploy-pages.yml` workflow builds and deploys `dist` with the
-official GitHub Pages actions. Enable **Settings → Pages → Source: GitHub Actions**
-before running it.
+project subpath. The verified public build is hosted at
+`https://webmaxru.github.io/webmcp-access-review-workbench/`; this private
+source repository runs validation-only GitHub Actions.
 
 GitHub Pages does not support repository-defined custom response headers. Use the
 included Vercel or Netlify configuration when `Origin-Agent-Cluster: ?1` and
