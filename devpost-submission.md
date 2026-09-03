@@ -2,7 +2,7 @@
 
 ## Project name
 
-**Least-Privilege Access Review Workbench — Remove Risky Access Without Breaking Production**
+**Least-Privilege Access Review Workbench: Remove Risky Access**
 
 ## Tagline
 
@@ -146,9 +146,10 @@ project description.
 
 ### Title and one-line summary
 
-- Current title: 89 characters; the Devpost project API allows at most 60.
-- Proposed shorter title, pending author approval: **Least-Privilege Access Review Workbench** (39 characters).
-- Keep the existing tagline above. The longer original title may remain in the write-up.
+- Author-selected wording: **Least-Privilege Access Review Workbench: Remove Risky Access** (60 characters).
+- The author's em-dash separator was normalized to a colon to meet Devpost's
+  60-character API limit without removing any words.
+- Keep the existing tagline above.
 
 ### Why this matters
 
@@ -164,14 +165,17 @@ agent can sequence identity lookup, path tracing, risk analysis, simulation,
 revision, and staging while the same evidence appears in the UI. The application
 itself contains no embedded model API, and the synthetic access calculations are
 deterministic rather than model-generated. The recorded demo is documented as using
-OpenAI Codex Site Tools; the author must confirm the actual tested clients below.
+OpenAI Codex Site Tools; no additional native client testing is claimed.
 
 ### How we used Codex
 
-TODO — author confirmation: describe Codex's actual role in building, debugging,
-testing, and preparing this project, and name any additional AI tools used. The
-repository credits the WebMCP Agent Skill from the Web AI Agent Skills collection.
-Do not infer a detailed development history merely from the finished source.
+OpenAI Codex was the external agent for the recorded WebMCP workflow, as documented
+in the repository's demo materials and native-validation history. During submission
+preparation, Codex inspected the source and assets, ran the 30 automated tests and
+TypeScript checks, checked the public app/repository/video endpoints, and organized
+the draft into the event's required fields. The repository also credits the WebMCP
+Agent Skill from the Web AI Agent Skills collection. No more specific code-generation
+history or use of additional AI tools is claimed without supporting evidence.
 
 ### Key features and architecture
 
@@ -218,8 +222,10 @@ Use the existing video URL and the detailed `DEMO_SCRIPT.md`,
 The intended sequence is: offboarding problem; native Codex tool discovery and
 calls; unsafe simulation; revised five-removal/one-reassignment plan; staging;
 visible reviewer confirmation; receipt and final ownership. Repository documentation
-reports a 2:16 narrated video. Verify Public visibility on YouTube, duration below
-three minutes, audible explanation, and real WebMCP calls before the final review.
+reports a 2:16 narrated video. YouTube's public page metadata confirms 136 seconds,
+`isUnlisted: false`, and `isPrivate: false`. The audible explanation and native tool
+demonstration are documented in the project materials; they were not independently
+replayed during this preparation pass.
 
 ### Known limitations
 
@@ -237,15 +243,16 @@ Preparation checks on 2026-09-03:
 - `npm run typecheck`: passed.
 - Live URL: anonymous HTTP 200; expected app title and root were present.
 - GitHub API: repository public; MIT license detected.
-- YouTube oEmbed: expected video title and author returned. This alone does not
-  distinguish Public from Unlisted visibility or verify audio and duration.
+- YouTube oEmbed: expected video title and author returned. Public page metadata
+  also reports 136 seconds, not Unlisted, and not Private. Audio and native tool
+  calls are supported by the author's project documentation, not replayed here.
 - Earliest local commit: `e3c7cb5`, 2026-09-02, "Build WebMCP least-privilege access review workbench".
 - Full local security scan and final live requirements review remain for
   `$submit-project`. No external project creation, editing, or upload occurred here.
 - Clarify public video copy so actions before confirmation are described as
   simulation/staging, not revocation of real access.
 
-### TODO Official Form Fields
+### Official form fields — prepared answers
 
 These are the live WebMCP event fields returned by Devpost on 2026-09-03. Do not
 invent personal answers. No Codex session ID is requested by this form.
@@ -256,11 +263,11 @@ invent personal answers. No Codex session ID is requested by this form.
 | 28250 | Country of residence of yourself and team members if applicable | Norway — confirmed by the author |
 | 28251 | If submitting on behalf of an organization, what is the organization name? | Not applicable — Individual entry |
 | 28252 | App Status | New — based on the author's scope statement and repository history |
-| 28253 | If Existing, explain what you updated during the submission period. (We recommend explaining this in your text description, too!) | Not applicable if New is confirmed |
+| 28253 | If Existing, explain what you updated during the submission period. (We recommend explaining this in your text description, too!) | Not applicable — New project |
 | 28254 | Live URL that judges can access using ChatGPT’s in-app browser or Google Chrome with WebMCP enabled | https://webmaxru.github.io/webmcp-access-review-workbench/ |
 | 28255 | If applicable, testing instructions for application - If you have credentials for your URL, you can put them here. | Use Judge testing instructions above; no credentials required |
 | 28256 | URL to your PUBLIC Code Repo (on Github, Gitlab, or Bitbucket) | https://github.com/webmaxru/webmcp-access-review-workbench |
-| 28257 | Which agent(s) or client(s) did you test your WebMCP tools with? | TODO confirm: OpenAI Codex Site Tools, as documented; do not claim Chrome testing without confirmation |
-| 28258 | Which AI tools have you leveraged while working on this project? | TODO author-provided tools and usage |
+| 28257 | Which agent(s) or client(s) did you test your WebMCP tools with? | OpenAI Codex using Site Tools in the in-app browser, as documented in the repository and demo. No additional native browser/client testing is claimed. |
+| 28258 | Which AI tools have you leveraged while working on this project? | OpenAI Codex for the WebMCP demonstration and agent testing, automated validation, documentation, and submission preparation. The repository credits the WebMCP Agent Skill from the Web AI Agent Skills collection. |
 | 28259 | Describe the level of learning you/your team derived from the project | Significant — confirmed by the author |
 | 28260 | Did you gain AI value that you can use in your career? | Yes — confirmed by the author |
