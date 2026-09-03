@@ -12,11 +12,10 @@ WebMCP tool.
 
 ## Live demo and source
 
-- **Configured live URL:** https://webmaxru.github.io/webmcp-access-review-workbench/
-  — deployed through this repository's GitHub Pages workflow and anonymously
+- **Project GitHub Pages site:** https://webmaxru.github.io/webmcp-access-review-workbench/
+  — deployed through this repository's own GitHub Pages workflow and anonymously
   smoke-tested with HTTP 200 on 2026-09-03. It must remain free and
   unrestricted through September 21, 2026 at 5:00 p.m. PT.
-- **Challenge gallery:** https://webmaxru.github.io/webmcp-challenge/
 - **Source repository:** https://github.com/webmaxru/webmcp-access-review-workbench
   (public; GitHub detects the root `LICENSE` as MIT)
 - **Demo video:** [Watch the 2:16 narrated Codex/WebMCP walkthrough](https://youtu.be/q2ydz9Y1_L8)
