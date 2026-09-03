@@ -1,4 +1,13 @@
-# Devpost submission copy
+# Submission information
+
+## Project name
+
+**Least-Privilege Access Review Workbench — Remove Risky Access Without Breaking Production**
+
+## Tagline
+
+Trace every hidden access path, remove unnecessary grants, and preserve the one
+dependency production still needs.
 
 ## 1. Inspiration
 

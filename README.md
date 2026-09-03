@@ -1,4 +1,4 @@
-# Least-Privilege Access Review Workbench
+# Least-Privilege Access Review Workbench — Remove Risky Access Without Breaking Production
 
 > This project was created using the [WebMCP Agent Skill from the Web AI Agent Skills collection](https://github.com/webmaxru/web-ai-agent-skills).
 
@@ -8,7 +8,7 @@ path, simulates removal, catches one shared-service breakage, revises the plan,
 stages it, and stops at a visible confirmation control that is not exposed as a
 WebMCP tool.
 
-![Least-Privilege Access Review Workbench social card](public/access-review-card.svg)
+![Least-Privilege Access Review Workbench — Remove Risky Access Without Breaking Production social card](public/access-review-card.svg)
 
 ## Live demo and source
 

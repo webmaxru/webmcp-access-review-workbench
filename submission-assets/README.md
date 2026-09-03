@@ -2,6 +2,8 @@
 
 > This project was created using the [WebMCP Agent Skill from the Web AI Agent Skills collection](https://github.com/webmaxru/web-ai-agent-skills).
 
+**Project:** Least-Privilege Access Review Workbench — Remove Risky Access Without Breaking Production
+
 This folder contains the final narration and captions for the published
 **2 minute 16 second** demo. The
 shot-by-shot plan, the exact Codex prompts, the operator setup, the on-camera opening
