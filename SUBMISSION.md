@@ -86,6 +86,29 @@ a transparent least-privilege review pattern.
   it shows real Codex Site Tool discovery and calls. Use the generated upload-ready
   caption file at `submission-assets/demo-captions.srt`.
 
+## YouTube title and description
+
+**Title**
+
+`Least-Privilege: Alex Left Friday. Why Does He Still Have Production Access? | WebMCP`
+
+**Description**
+
+```text
+Alex's contract ended Friday, but four hidden access paths still reach production and customer data. Removing everything would also break an on-call rollback dependency.
+
+In this 2:16 Codex demo, the Least-Privilege Access Review Workbench exposes nine WebMCP tools that resolve identity, trace nested access, flag risks, simulate removal, and stage the smallest safe plan. Codex removes five unnecessary grants, reassigns one shared dependency to a service identity, and leaves the irreversible confirmation behind a visible human control.
+
+The scenario is deterministic and synthetic. It demonstrates an auditable review pattern, not production IAM enforcement or a compliance guarantee.
+
+Try it: https://webmaxru.github.io/webmcp-access-review-workbench/
+Source: https://github.com/webmaxru/webmcp-access-review-workbench
+
+Built for the WebMCP Challenge.
+
+#WebMCP #AIAgents #LeastPrivilege #Cybersecurity #Codex
+```
+
 ## Run and judge the source
 
 Requirements: Node.js 20.19+ or 22.12+.
