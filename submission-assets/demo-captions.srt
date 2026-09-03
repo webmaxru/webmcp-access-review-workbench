@@ -1,110 +1,216 @@
 1
-00:00:00,000 --> 00:00:10,000
-Alex Morgan's contract ended Friday, but production deploy and customer-data export
-access remain active in this fully synthetic organization.
+00:00:00,050 --> 00:00:02,431
+Alex Morgan's contract ended Friday.
 
 2
-00:00:10,000 --> 00:00:17,500
-The Least-Privilege Access Review Workbench turns that question into a visible
-review, with every effective permission path explained.
+00:00:02,431 --> 00:00:07,407
+It's Tuesday, and Alex can still ship code
+to production and export customer data.
 
 3
-00:00:17,500 --> 00:00:25,500
-I am asking Codex to investigate through the WebMCP Site Tools
-registered by this top-level page.
+00:00:07,407 --> 00:00:11,667
+Nobody has noticed, because that access
+isn't on Alex's profile.
 
 4
-00:00:25,500 --> 00:00:34,500
-The status confirms nine imperative tools. This is real tool execution;
-the optional step-through rehearsal only holds the same states for practice.
+00:00:11,667 --> 00:00:12,685
+It's inherited.
 
 5
-00:00:34,500 --> 00:00:44,000
-The fixture contains exactly fifty synthetic users, ten groups, and three
-applications, with no credentials, secrets, or external APIs.
+00:00:12,685 --> 00:00:15,139
+Every offboarding team knows this problem.
 
 6
-00:00:44,000 --> 00:00:51,500
-Codex resolves Alex's offboarding identity and computes four permission paths
-producing six sensitive capability grants.
+00:00:15,139 --> 00:00:19,329
+The truth is buried in an access console
+nobody has time to read.
 
 7
-00:00:51,500 --> 00:00:57,500
-The first path is a direct Production Operator role in Atlas Deploy.
+00:00:19,329 --> 00:00:21,921
+And pasting screenshots into a chat window
 
 8
-00:00:57,500 --> 00:01:05,000
-The second runs through Contractors, Platform Contributors, and Release Manager,
-creating non-obvious production approval access.
+00:00:21,921 --> 00:00:24,514
+gets you a guess, not a path you can
+defend.
 
 9
-00:01:05,000 --> 00:01:13,500
-The membership graph also cycles through Release Observers.
-Traversal detects that cycle and safely avoids double counting.
+00:00:24,514 --> 00:00:28,484
+So this page hands the agent real tools
+instead of pixels.
 
 10
-00:01:13,500 --> 00:01:22,000
-The other paths are Alex's personal am-ci-export token
-and inherited Data Steward access from the Mercury project.
+00:00:28,484 --> 00:00:32,512
+Nine WebMCP tools, registered right in the
+document.
 
 11
-00:01:22,000 --> 00:01:29,500
-Codex finds the risks and simulates removing all six grants.
-This simulation changes no permission.
+00:00:32,512 --> 00:00:33,345
+Resolve.
 
 12
-00:01:29,500 --> 00:01:39,000
-It catches one breakage before staging: Incident Relay still depends
-on the production rollback capability attached to Alex's role.
+00:00:33,345 --> 00:00:34,225
+Trace.
 
 13
-00:01:39,000 --> 00:01:45,500
-Codex revises the plan by reassigning rollback
-to the dedicated service identity, svc-oncall-relay.
+00:00:34,225 --> 00:00:35,104
+Simulate.
 
 14
-00:01:45,500 --> 00:01:54,000
-The deterministic result removes exactly five unnecessary grants from Alex
-and preserves exactly one shared on-call dependency.
+00:00:35,104 --> 00:00:35,856
+Preview.
 
 15
-00:01:54,000 --> 00:02:03,500
-Exposure moves from ninety-two to eighteen. Codex previews the delta
-and stages the review with zero changes before confirmation.
+00:00:35,856 --> 00:00:36,782
+Stage.
 
 16
-00:02:03,500 --> 00:02:11,000
-Before I approve, Codex reads the receipt state
-and correctly reports that no receipt exists.
+00:00:36,782 --> 00:00:41,505
+Codex discovers all nine, and one sentence
+starts the review.
 
 17
-00:02:11,000 --> 00:02:16,000
-Now I review the visible plan and activate Confirm staged review.
+00:00:41,505 --> 00:00:43,391
+From here I don't touch the interface.
 
 18
-00:02:16,000 --> 00:02:21,000
-This normal page control is not exposed as a WebMCP tool.
+00:00:43,391 --> 00:00:46,023
+Codex resolves the identity, computes
 
 19
-00:02:21,000 --> 00:02:26,000
-Ordinary browser actuation may still reach it
-under Codex and browser safety confirmation.
+00:00:46,023 --> 00:00:49,213
+effective access, and the map redraws
+itself.
 
 20
-00:02:26,000 --> 00:02:30,000
-It commits only the mocked in-memory fixture.
+00:00:49,213 --> 00:00:50,602
+Four separate paths.
 
 21
-00:02:30,000 --> 00:02:34,000
-Codex reads receipt ARR-2026-0902-0042, then verifies that Alex has zero
-sensitive grants and rollback belongs to svc-oncall-relay.
+00:00:50,602 --> 00:00:52,245
+Six sensitive grants.
 
 22
-00:02:34,000 --> 00:02:37,000
-The Least-Privilege Access Review Workbench is not a production IAM
-or compliance system.
+00:00:52,245 --> 00:00:54,502
+Each one explained, not just listed.
 
 23
-00:02:37,000 --> 00:02:42,000
-It demonstrates a transparent review pattern with confirmation kept visible
-and subject to the browser safety workflow.
+00:00:54,502 --> 00:00:56,562
+The interesting one is the second.
+
+24
+00:00:56,562 --> 00:01:01,863
+Alex sits in Contractors, Contractors
+nests into Platform Contributors,
+
+25
+00:01:01,863 --> 00:01:05,706
+and that grants Release Manager, which
+approves production releases.
+
+26
+00:01:05,706 --> 00:01:08,715
+The membership graph even loops back on
+itself.
+
+27
+00:01:08,715 --> 00:01:12,488
+The traversal catches the cycle instead of
+counting it twice.
+
+28
+00:01:12,488 --> 00:01:14,699
+Now the part a checklist gets wrong.
+
+29
+00:01:14,699 --> 00:01:18,981
+Codex simulates removing everything, and
+the page pushes back.
+
+30
+00:01:18,981 --> 00:01:22,535
+On-call Incident Relay depends on Alex's
+rollback grant.
+
+31
+00:01:22,535 --> 00:01:25,671
+Revoke it all, and the next outage has no
+way back.
+
+32
+00:01:25,671 --> 00:01:28,067
+So the plan gets revised, not abandoned.
+
+33
+00:01:28,067 --> 00:01:29,745
+Five grants leave Alex.
+
+34
+00:01:29,745 --> 00:01:33,218
+One shared dependency moves to a service
+identity.
+
+35
+00:01:33,218 --> 00:01:35,856
+Exposure falls from ninety-two to
+eighteen.
+
+36
+00:01:35,856 --> 00:01:38,461
+And so far, nothing has actually changed.
+
+37
+00:01:38,461 --> 00:01:40,347
+Because the agent can't change it.
+
+38
+00:01:40,347 --> 00:01:41,782
+Staging is a tool.
+
+39
+00:01:41,782 --> 00:01:43,449
+Confirming is not.
+
+40
+00:01:43,449 --> 00:01:48,993
+Codex asks for the receipt, and the page
+answers plainly: no receipt exists yet.
+
+41
+00:01:48,993 --> 00:01:50,347
+The last step is mine.
+
+42
+00:01:50,347 --> 00:01:52,882
+One human click, one read-only receipt.
+
+43
+00:01:52,882 --> 00:01:57,662
+Then Codex re-reads the live state: Alex,
+zero sensitive grants.
+
+44
+00:01:57,662 --> 00:02:00,845
+Rollback now owned by the on-call service
+identity.
+
+45
+00:02:00,845 --> 00:02:02,847
+That's what WebMCP unlocks.
+
+46
+00:02:02,847 --> 00:02:05,201
+An agent reasoning inside your app, on
+
+47
+00:02:05,201 --> 00:02:08,218
+your data model, with the decision still
+human.
+
+48
+00:02:08,218 --> 00:02:10,150
+The identities here are synthetic.
+
+49
+00:02:10,150 --> 00:02:12,106
+The offboarding problem is not.

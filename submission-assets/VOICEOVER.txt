@@ -1,35 +1,45 @@
-LEAST-PRIVILEGE ACCESS REVIEW WORKBENCH — TARGET RUNTIME 2:40
+LEAST-PRIVILEGE ACCESS REVIEW WORKBENCH — SPOKEN NARRATION
+Planned finished runtime 2:36. Timed caption cues live in demo-captions.srt.
+Delivery: conversational, confident, unhurried on the two safety beats.
 
-Alex Morgan's contract ended Friday, but production deploy and customer-data export access remain active in this fully synthetic organization.
+Alex Morgan's contract ended Friday. It's Tuesday, and Alex can still ship code to production and export customer data.
 
-The Least-Privilege Access Review Workbench turns that question into a visible review, with every effective permission path explained.
+Nobody has noticed, because that access isn't on Alex's profile. It's inherited.
 
-I am asking Codex to investigate through the WebMCP Site Tools registered by this top-level page.
+Every offboarding team knows this problem. The truth is buried in an access console nobody has time to read.
 
-The status confirms nine imperative tools. This is real tool execution; the optional step-through rehearsal only holds the same states for practice.
+And pasting screenshots into a chat window gets you a guess, not a path you can defend.
 
-The fixture contains exactly fifty synthetic users, ten groups, and three applications, with no credentials, secrets, or external APIs.
+So this page hands the agent real tools instead of pixels. Nine WebMCP tools, registered right in the document.
 
-Codex resolves Alex's offboarding identity and computes four permission paths producing six sensitive capability grants.
+Resolve. Trace. Simulate. Preview. Stage. Codex discovers all nine, and one sentence starts the review.
 
-The first path is a direct Production Operator role in Atlas Deploy.
+From here I don't touch the interface. Codex resolves the identity, computes effective access, and the map redraws itself.
 
-The second runs through Contractors, Platform Contributors, and Release Manager, creating non-obvious production approval access.
+Four separate paths. Six sensitive grants. Each one explained, not just listed.
 
-The membership graph also cycles through Release Observers. Traversal detects that cycle and safely avoids double counting.
+The interesting one is the second. Alex sits in Contractors, Contractors nests into Platform Contributors,
 
-The other paths are Alex's personal am-ci-export token and inherited Data Steward access from the Mercury project.
+and that grants Release Manager, which approves production releases.
 
-Codex finds the risks and simulates removing all six grants. This simulation changes no permission.
+The membership graph even loops back on itself. The traversal catches the cycle instead of counting it twice.
 
-It catches one breakage before staging: Incident Relay still depends on the production rollback capability attached to Alex's role.
+Now the part a checklist gets wrong. Codex simulates removing everything, and the page pushes back.
 
-Codex revises the plan by reassigning rollback to the dedicated service identity, svc-oncall-relay.
+On-call Incident Relay depends on Alex's rollback grant. Revoke it all, and the next outage has no way back.
 
-The deterministic result removes exactly five unnecessary grants from Alex and preserves exactly one shared on-call dependency.
+So the plan gets revised, not abandoned. Five grants leave Alex. One shared dependency moves to a service identity.
 
-Exposure moves from ninety-two to eighteen. Codex previews the delta and stages the review with zero changes before confirmation.
+Exposure falls from ninety-two to eighteen. And so far, nothing has actually changed.
 
-Before I approve, Codex reads the receipt state and correctly reports that no receipt exists.
+Because the agent can't change it. Staging is a tool. Confirming is not.
 
-Now I review the visible plan and activate Confirm staged review. This normal page control is not exposed as a WebMCP tool. Ordinary browser actuation may still reach it under Codex and browser safety confirmation. It commits only the mocked in-memory fixture. Codex reads receipt ARR-2026-0902-0042, then verifies that Alex has zero sensitive grants and rollback belongs to svc-oncall-relay. The Least-Privilege Access Review Workbench is not a production IAM or compliance system. It demonstrates a transparent review pattern with confirmation kept visible and subject to the browser safety workflow.
+Codex asks for the receipt, and the page answers plainly: no receipt exists yet.
+
+The last step is mine. One human click, one read-only receipt.
+
+Then Codex re-reads the live state: Alex, zero sensitive grants. Rollback now owned by the on-call service identity.
+
+That's what WebMCP unlocks. An agent reasoning inside your app, on your data model, with the decision still human.
+
+The identities here are synthetic. The offboarding problem is not.

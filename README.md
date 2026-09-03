@@ -10,12 +10,27 @@ WebMCP tool.
 
 ## Live demo and source
 
-- **Live HTTPS demo:** https://webmaxru.github.io/webmcp-access-review-workbench/
+- **Configured live URL:** https://webmaxru.github.io/webmcp-access-review-workbench/
+  — returns HTTP 404 as of the latest readiness audit; a working deployment is
+  still required before submission and must remain free and unrestricted through
+  September 21, 2026 at 5:00 p.m. PT.
 - **Challenge gallery:** https://webmaxru.github.io/webmcp-challenge/
 - **Source repository:** https://github.com/webmaxru/webmcp-access-review-workbench
-  (private by instruction; it must be made public before Devpost submission)
-- **Narrated rehearsal storyboard:** `submission-assets/demo-draft.mp4`
-  (watermarked draft, not the required real Codex capture)
+  (public; GitHub detects the root `LICENSE` as MIT)
+- **Recording status:** a validated 2:16 narrated final master exists only in the
+  ignored local `submission-video/` directory; no MP4 is committed.
+- **Caption upload path:** `submission-assets/demo-captions.srt` (the upload-ready
+  SRT generated for the final master belongs at this committed path).
+
+## Why WebMCP improves this workflow
+
+Traditional access reviews force a person or agent to scrape several screens and
+infer how roles, groups, tokens, and projects combine. WebMCP exposes those domain
+operations directly while keeping the same evidence and staged plan visible to the
+reviewer. The agent can perform exhaustive graph traversal and simulation; the human
+can inspect each path, preserve the operational dependency, cancel the plan, or use
+the visible confirmation gate. That shared, structured workflow was difficult to
+achieve reliably with click automation alone.
 
 ## What the demo proves
 
@@ -134,18 +149,16 @@ or iframe discovery.
 
 OpenAI Site Tools is the primary target. For browser-preview validation:
 
-1. Use a compatible Chrome preview build. The installed skill records Chrome
-   `146.0.7672.0+` as the early-preview baseline; Chrome 149 uses the older
-   `navigator.modelContext` surface.
+1. Use the ChatGPT desktop in-app browser or Google Chrome 149 or later. Chrome 149
+   uses the older `navigator.modelContext` surface.
 2. Enable `chrome://flags/#enable-webmcp-testing`, then restart Chrome.
 3. Serve the app on `http://localhost` with `npm run dev` or use HTTPS.
 4. Open it as the top-level page.
 5. Use the Model Context Tool Inspector or equivalent preview tooling to inspect and
    execute the nine tools.
 6. On Chrome 150+, `document.modelContext` is preferred. The navigator fallback is
-   retained only for Chrome 146–149 compatibility.
-7. Chrome 151+ registration is asynchronous; the app awaits it. Chrome 153+ supplies
-   the per-execution abort signal used by this implementation.
+   retained for Chrome 149 compatibility.
+7. Chrome 151+ registration is asynchronous; the app awaits it inside `try/catch`.
 
 If WebMCP is absent, the status chip explains that condition and the explicitly
 labeled **step-through rehearsal** drives the same service. Start resolves identity;
@@ -170,9 +183,12 @@ rehearsal.
 The application has no iframe deployment path and no runtime cross-origin assets.
 
 The Vite build uses `base: "./"`, so generated assets resolve correctly from a
-project subpath. The verified public build is hosted at
-`https://webmaxru.github.io/webmcp-access-review-workbench/`; this private
-source repository runs validation-only GitHub Actions.
+project subpath. The public source repository now includes both validation-only CI
+and `.github/workflows/deploy-pages.yml`, which builds `dist` and deploys it with the
+official GitHub Pages actions. In **Settings → Pages**, select **GitHub Actions** as
+the source, then commit/push this workflow or run it manually. The configured URL
+still returned 404 during the latest audit, so re-run the browser checks after the
+first successful deployment.
 
 GitHub Pages does not support repository-defined custom response headers. Use the
 included Vercel or Netlify configuration when `Origin-Agent-Cluster: ?1` and
@@ -202,6 +218,13 @@ and receipts are synthetic. The demo does not claim to prevent breaches, prove
 compliance, or replace an authoritative access-control review.
 
 **Judge credentials: none required.**
+
+## Hackathon scope and prior work
+
+Repository history begins with the WebMCP challenge implementation and does not show
+a separate pre-existing application being reused. The access graph fixture, domain
+service, WebMCP tools, UI, tests, and submission documentation in this repository
+are the challenge project.
 
 ## License
 

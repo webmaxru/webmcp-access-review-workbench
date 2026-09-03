@@ -33,6 +33,7 @@ Key assertions:
 - all 9 tools register atomically; the first async failure immediately unregisters
   every attempted name, aborts registration signals, and never reports ready;
 - invalid subjects and missing safety acknowledgment return corrective errors;
+- unknown input fields are rejected at runtime instead of relying on the schema;
 - all nine callbacks support `execute(input)` when options are omitted;
 - already-aborted execution signals stop work before mutation;
 - mutating callbacks have no post-mutation render wait or pending promise;
@@ -69,6 +70,7 @@ Use the page as a top-level secure document. Inputs below are JSON objects.
 | --- | --- |
 | `{"subject":""}` | Subject required; suggests Alex Morgan / ID |
 | `{"subject":"Sam"}` | Synthetic demo supports Alex Morgan only |
+| Any tool input with an undeclared field | Corrective error naming the unexpected and allowed fields |
 | `simulate_access_changes` with `mode="apply"` | Mode must be `remove_all` or `preserve_oncall` |
 | `stage_access_changes` with acknowledgment omitted/false | Must acknowledge staging never revokes |
 | receipt/cancel with a different review ID | Must use `alex-offboarding-2026-09-02` |
@@ -127,9 +129,11 @@ Each prompt should route to the listed tool or sequence without manually naming 
 
 ## Browser/provider compatibility checks
 
+- Use the ChatGPT desktop in-app browser or Google Chrome 149 or later.
+- In Chrome, enable `chrome://flags/#enable-webmcp-testing` and restart the browser.
 - Open directly, not in an iframe.
 - Confirm HTTPS or localhost secure context.
-- Confirm `document.modelContext` on current builds; Chrome 146–149 may use the
+- Confirm `document.modelContext` on current builds; Chrome 149 may use the
   navigator fallback.
 - Confirm nine tools in Site Tools/inspector and a ready status chip.
 - Confirm any registration failure removes all successful registrations and reports
@@ -141,3 +145,5 @@ Each prompt should route to the listed tool or sequence without manually naming 
 - Confirm the normal confirmation button is absent from the WebMCP tool contracts.
   Ordinary browser actuation may still reach it and remains subject to
   Codex/browser safety confirmation.
+- Confirm the public live URL remains free and unrestricted through September 21,
+  2026 at 5:00 p.m. PT.

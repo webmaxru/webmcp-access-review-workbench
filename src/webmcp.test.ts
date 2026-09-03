@@ -1,10 +1,28 @@
 import { describe, expect, it, vi } from "vitest";
 import { AccessReviewService } from "./domain";
-import { createAccessReviewTools, registerAccessReviewTools } from "./webmcp";
+import {
+  createAccessReviewTools,
+  registerAccessReviewTools,
+  resolveAccessReviewModelContext,
+} from "./webmcp";
 
 const liveSignal = () => new AbortController().signal;
 
 describe("WebMCP tool contracts", () => {
+  it("requires a secure visible window and prefers document.modelContext", () => {
+    const documentContext = { registerTool: vi.fn() } as WebModelContext;
+    const navigatorContext = { registerTool: vi.fn() } as WebModelContext;
+    vi.stubGlobal("window", { isSecureContext: true });
+    vi.stubGlobal("document", { modelContext: documentContext });
+    vi.stubGlobal("navigator", { modelContext: navigatorContext });
+
+    expect(resolveAccessReviewModelContext()).toBe(documentContext);
+
+    vi.stubGlobal("window", { isSecureContext: false });
+    expect(resolveAccessReviewModelContext()).toBeNull();
+    vi.unstubAllGlobals();
+  });
+
   it("registers nine top-level imperative tools with lifecycle cleanup", async () => {
     const registered: WebMcpTool[] = [];
     const signals: AbortSignal[] = [];
@@ -52,14 +70,21 @@ describe("WebMCP tool contracts", () => {
     const tools = createAccessReviewTools(new AccessReviewService());
     expect(new Set(tools.map((tool) => tool.name)).size).toBe(tools.length);
 
+    const activeNames = new Set(["trace_permission_path"]);
     const signals: AbortSignal[] = [];
-    const unregisterTool = vi.fn();
+    const unregisterTool = vi.fn((name: string) => activeNames.delete(name));
     const context: WebModelContext = {
-      registerTool: vi.fn(async (tool, options) => {
+      registerTool: vi.fn((tool, options) => {
         if (options?.signal) signals.push(options.signal);
-        if (tool.name === "trace_permission_path") {
+        if (activeNames.has(tool.name)) {
           throw new DOMException("Duplicate tool name", "InvalidStateError");
         }
+        activeNames.add(tool.name);
+        options?.signal.addEventListener(
+          "abort",
+          () => activeNames.delete(tool.name),
+          { once: true },
+        );
       }),
       unregisterTool,
     };
@@ -72,10 +97,12 @@ describe("WebMCP tool contracts", () => {
       status: "error",
       registered: 0,
     });
-    expect(unregisterTool).toHaveBeenCalledTimes(9);
+    expect(unregisterTool).toHaveBeenCalledTimes(8);
+    expect(unregisterTool).not.toHaveBeenCalledWith("trace_permission_path");
+    expect(activeNames).toEqual(new Set(["trace_permission_path"]));
     expect(signals.every((signal) => signal.aborted)).toBe(true);
     registration.dispose();
-    expect(unregisterTool).toHaveBeenCalledTimes(9);
+    expect(unregisterTool).toHaveBeenCalledTimes(8);
     consoleError.mockRestore();
   });
 
@@ -100,7 +127,7 @@ describe("WebMCP tool contracts", () => {
     await registration.ready;
 
     expect(context.registerTool).toHaveBeenCalledTimes(9);
-    expect(unregisterTool).toHaveBeenCalledTimes(9);
+    expect(unregisterTool).not.toHaveBeenCalled();
     expect(signals.every((signal) => signal.aborted)).toBe(true);
     expect(service.getSnapshot().webMcp).toMatchObject({
       status: "error",
@@ -129,6 +156,19 @@ describe("WebMCP tool contracts", () => {
         { signal: liveSignal() },
       ),
     ).toThrow("acknowledgeNoRevocation must be true");
+    expect(() =>
+      identity.execute(
+        { subject: "Alex Morgan", ignored: true },
+        { signal: liveSignal() },
+      ),
+    ).toThrow("Unexpected input field: ignored");
+    const trace = tools.find((tool) => tool.name === "trace_permission_path")!;
+    expect(() =>
+      trace.execute(
+        { subject: "Alex Morgan", pathId: "path_typo" },
+        { signal: liveSignal() },
+      ),
+    ).toThrow("pathId must be one of the documented path identifiers");
   });
 
   it("stages through WebMCP without exposing the visible confirmation control", async () => {

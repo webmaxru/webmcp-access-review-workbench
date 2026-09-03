@@ -8,3 +8,6 @@ dist/
 *.tsbuildinfo
 .DS_Store
 .vercel/
+
+# Local submission recordings and final masters (never commit)
+/submission-video/

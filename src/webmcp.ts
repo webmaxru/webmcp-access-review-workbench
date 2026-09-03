@@ -16,7 +16,28 @@ const subjectSchema = {
   additionalProperties: false,
 };
 
-function requireSubject(input: Record<string, unknown>) {
+function assertOnlyKeys(
+  input: Record<string, unknown>,
+  allowedKeys: readonly string[],
+) {
+  if (!input || typeof input !== "object" || Array.isArray(input)) {
+    throw new Error("Tool input must be a JSON object.");
+  }
+  const unexpected = Object.keys(input).filter((key) => !allowedKeys.includes(key));
+  if (unexpected.length > 0) {
+    throw new Error(
+      `Unexpected input field${unexpected.length === 1 ? "" : "s"}: ${unexpected.join(
+        ", ",
+      )}. Allowed fields: ${allowedKeys.join(", ")}.`,
+    );
+  }
+}
+
+function requireSubject(
+  input: Record<string, unknown>,
+  allowedKeys: readonly string[] = ["subject"],
+) {
+  assertOnlyKeys(input, allowedKeys);
   const subject = input.subject;
   if (typeof subject !== "string" || !subject.trim()) {
     throw new Error('subject is required. Use "Alex Morgan" or "usr_alex_morgan".');
@@ -99,8 +120,20 @@ export function createAccessReviewTools(service: AccessReviewService): AccessToo
       },
       annotations: { readOnlyHint: false, untrustedContentHint: false },
       execute: withUiSync((input) => {
-        requireSubject(input);
+        requireSubject(input, ["subject", "pathId"]);
         if (input.pathId !== undefined && typeof input.pathId !== "string") {
+          throw new Error("pathId must be one of the documented path identifiers.");
+        }
+        if (
+          input.pathId !== undefined &&
+          ![
+            "path_direct_role",
+            "path_nested_group",
+            "path_api_token",
+            "path_project_membership",
+            "path_service_rollback",
+          ].includes(input.pathId)
+        ) {
           throw new Error("pathId must be one of the documented path identifiers.");
         }
         return service.tracePath(input.pathId as string | undefined);
@@ -139,7 +172,7 @@ export function createAccessReviewTools(service: AccessReviewService): AccessToo
       },
       annotations: { readOnlyHint: false, untrustedContentHint: false },
       execute: withUiSync((input) => {
-        requireSubject(input);
+        requireSubject(input, ["subject", "mode"]);
         if (input.mode !== "remove_all" && input.mode !== "preserve_oncall") {
           throw new Error('mode must be "remove_all" or "preserve_oncall".');
         }
@@ -178,7 +211,7 @@ export function createAccessReviewTools(service: AccessReviewService): AccessToo
       },
       annotations: { readOnlyHint: false, untrustedContentHint: false },
       execute: withUiSync((input) => {
-        requireSubject(input);
+        requireSubject(input, ["subject", "acknowledgeNoRevocation"]);
         if (input.acknowledgeNoRevocation !== true) {
           throw new Error(
             "acknowledgeNoRevocation must be true. This WebMCP tool stages the review but does not expose confirmation.",
@@ -205,6 +238,7 @@ export function createAccessReviewTools(service: AccessReviewService): AccessToo
       },
       annotations: { readOnlyHint: false, untrustedContentHint: false },
       execute: withUiSync((input) => {
+        assertOnlyKeys(input, ["reviewId"]);
         if (input.reviewId !== "alex-offboarding-2026-09-02") {
           throw new Error('reviewId must be "alex-offboarding-2026-09-02".');
         }
@@ -229,6 +263,7 @@ export function createAccessReviewTools(service: AccessReviewService): AccessToo
       },
       annotations: { readOnlyHint: true, untrustedContentHint: false },
       execute: withUiSync((input) => {
+        assertOnlyKeys(input, ["reviewId"]);
         if (input.reviewId !== "alex-offboarding-2026-09-02") {
           throw new Error('reviewId must be "alex-offboarding-2026-09-02".');
         }
@@ -238,15 +273,24 @@ export function createAccessReviewTools(service: AccessReviewService): AccessToo
   ];
 }
 
+export function resolveAccessReviewModelContext(): WebModelContext | null {
+  if (
+    typeof window === "undefined" ||
+    typeof document === "undefined" ||
+    window.isSecureContext === false
+  ) {
+    return null;
+  }
+
+  const modelContext = document.modelContext || navigator.modelContext;
+  return modelContext || null;
+}
+
 export function registerAccessReviewTools(
   service: AccessReviewService,
   modelContext?: WebModelContext,
 ) {
-  const context =
-    modelContext ??
-    (typeof document !== "undefined" && document.modelContext) ??
-    (typeof navigator !== "undefined" && navigator.modelContext) ??
-    null;
+  const context = modelContext ?? resolveAccessReviewModelContext();
 
   if (!context) {
     service.setWebMcpStatus(
@@ -263,13 +307,18 @@ export function registerAccessReviewTools(
 
   const controller = new AbortController();
   const tools = createAccessReviewTools(service);
-  const attemptedNames: string[] = [];
+  const registeredNames = new Set<string>();
   let disposed = false;
 
   const cleanup = () => {
     if (disposed) return;
     disposed = true;
-    for (const name of attemptedNames.splice(0).reverse()) {
+    const names = tools
+      .map((tool) => tool.name)
+      .filter((name) => registeredNames.has(name))
+      .reverse();
+    registeredNames.clear();
+    for (const name of names) {
       try {
         context.unregisterTool?.(name);
       } catch {
@@ -280,25 +329,35 @@ export function registerAccessReviewTools(
   };
 
   const ready = (async () => {
-    const registrations: Promise<void>[] = [];
-    try {
-      for (const tool of tools) {
-        const registration = context.registerTool(tool, {
+    const registrations = tools.map(async (tool) => {
+      try {
+        await context.registerTool(tool, {
           signal: controller.signal,
         });
-        attemptedNames.push(tool.name);
-        registrations.push(Promise.resolve(registration));
+        if (!controller.signal.aborted) {
+          registeredNames.add(tool.name);
+        }
+      } catch (error) {
+        throw new Error(
+          `Failed to register ${tool.name}: ${
+            error instanceof Error ? error.message : String(error)
+          }`,
+          { cause: error },
+        );
       }
+    });
+
+    try {
       await Promise.all(registrations);
       if (disposed) return;
       service.setWebMcpStatus(
         "ready",
-        attemptedNames.length,
-        `${attemptedNames.length} top-level imperative tools ready`,
+        registeredNames.size,
+        `${registeredNames.size} top-level imperative tools ready`,
       );
     } catch (error) {
-      // If a synchronous call throws before Promise.all is reached, consume any
-      // already-started registrations while cleanup proceeds immediately.
+      // Consume slower registration settlements after the first failure so
+      // atomic cleanup cannot produce unhandled rejections.
       void Promise.allSettled(registrations);
       if (disposed) return;
       console.error("WebMCP tool registration failed atomically:", error);

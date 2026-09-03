@@ -3,14 +3,16 @@
 These dialogues use synthetic data. Representative responses are intentionally
 concise and should remain grounded in tool outputs.
 
-## Dialogue 1 — headline offboarding review
+Dialogue 1 and the final approval dialogue are the two prompts used in the recorded
+demo (`DEMO_SCRIPT.md`, Prompt A and Prompt B). Keep them in sync with that script.
+
+## Dialogue 1 — headline offboarding review (recorded demo, Prompt A)
 
 **Human**
 
-> Alex Morgan's contract ended Friday. Find every path that still grants production
-> deploy or customer-data export, preserve anything required by the on-call service,
-> simulate the change, and stage the least-privilege review without revoking
-> anything.
+> Alex Morgan's contract ended Friday. Using this page's tools, find every path that
+> still grants production deploy or customer-data export, tell me what would break if
+> I removed all of them, then stage the smallest safe plan. Do not revoke anything.
 
 **Expected tool sequence**
 
@@ -107,7 +109,7 @@ concise and should remain grounded in tool outputs.
 > I will acknowledge the staging-only boundary, then retry. Confirmation remains a
 > separate visible normal page control outside the WebMCP tool surface.
 
-## Final approval dialogue
+## Final approval dialogue (recorded demo, Prompt B)
 
 **Agent before click**
 
@@ -119,11 +121,13 @@ concise and should remain grounded in tool outputs.
 
 **Human**
 
-> I reviewed the page and clicked Confirm staged review. Read the receipt.
+> I confirmed it on the page. Read the receipt and re-check Alex's effective access.
 
-**Expected tool**
+**Expected tool sequence**
 
-`get_access_review_receipt({"reviewId":"alex-offboarding-2026-09-02"})`
+1. `get_access_review_receipt({"reviewId":"alex-offboarding-2026-09-02"})`
+2. `get_effective_access({"subject":"Alex Morgan"})`
+3. `find_access_risks({"subject":"Alex Morgan"})`
 
 **Representative agent response**
 

@@ -2,16 +2,18 @@
 
 ## Submission links
 
-- **Live HTTPS URL:** https://webmaxru.github.io/webmcp-access-review-workbench/
+- **Configured live URL:** https://webmaxru.github.io/webmcp-access-review-workbench/
+  (currently HTTP 404; working deployment remains a blocker and must remain free
+  and unrestricted through September 21, 2026 at 5:00 p.m. PT)
 - **Source repository:** https://github.com/webmaxru/webmcp-access-review-workbench
-  (currently private; must be public before submission)
-- **Draft video:** `submission-assets/demo-draft.mp4` (2:42, narrated,
-  captioned, and visibly watermarked as a rehearsal storyboard)
+  (public; GitHub detects the root MIT license)
+- **Local recording policy:** MP4 drafts and final masters remain only under the
+  ignored `submission-video/` directory and are not committed.
 - **Required final video:** public YouTube recording under three minutes showing
-  real Codex Site Tool discovery and calls
+  real Codex Site Tool discovery and calls (current local final-master runtime 2:16)
 
-The repository is currently private by instruction. It must be made public before the
-challenge deadline by the repository owner. The persistent demo is published separately from the private source repository.
+The repository is public. The configured GitHub Pages homepage is not currently
+serving the app, so deployment and a fresh HTTPS smoke test remain owner actions.
 
 ## Required package
 
@@ -36,8 +38,10 @@ challenge deadline by the repository owner. The persistent demo is published sep
 - [x] Natural-language dialogues and recovery path
 - [x] Deterministic/routing test plan
 - [x] Vercel and Netlify hosting headers
+- [x] Repository-side GitHub Pages deployment workflow
 - [x] MIT license
 - [x] Static social/demo SVG
+- [ ] Working public HTTPS deployment (configured URL currently returns 404)
 
 ## Scenario verification
 
@@ -74,12 +78,16 @@ challenge deadline by the repository owner. The persistent demo is published sep
 
 ## Publication, license, source, and video
 
-- Repository publication remains a manual owner step.
+- Repository publication is complete and the GitHub API reports public visibility.
 - MIT license is included at `LICENSE`.
 - All source required to run the demo is included, excluding installed dependencies.
-- Four clean screenshots and a 2:42 narrated rehearsal storyboard are included.
-- Record a real Codex Site Tool take using `DEMO_SCRIPT.md`, then upload it
-  publicly to YouTube.
+- Four clean screenshots and exact captions are included; a validated 2:16
+  narrated final master exists only in ignored `submission-video/`.
+- Publish and smoke-test a working HTTPS deployment; the configured Pages URL
+  currently returns 404.
+- In repository **Settings → Pages**, select **GitHub Actions** as the source. The
+  workflow intentionally does not change repository settings through an API.
+- Upload the validated 2:16 narrated final master publicly to YouTube.
 - Judge credentials: none required.
 
 ## Claims boundary

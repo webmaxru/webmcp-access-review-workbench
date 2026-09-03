@@ -74,9 +74,40 @@ a transparent least-privilege review pattern.
 
 ## Submission links and publication status
 
-- **Live demo:** https://webmaxru.github.io/webmcp-access-review-workbench/
+- **Configured live URL:** https://webmaxru.github.io/webmcp-access-review-workbench/
+  — currently returns HTTP 404, so the submission is blocked until a working
+  deployment is published and re-tested. The source includes a standard GitHub
+  Pages Actions workflow; repository Pages must use **GitHub Actions** as its source.
+  Once published, access must remain free and unrestricted through September 21,
+  2026 at 5:00 p.m. PT.
 - **Source:** https://github.com/webmaxru/webmcp-access-review-workbench
-  — currently private and therefore not yet challenge-eligible.
-- **Video:** `submission-assets/demo-draft.mp4` is a 2:42 narrated,
-  captioned, watermarked rehearsal storyboard. Replace it with a public YouTube
-  recording that shows real Codex Site Tool discovery and calls.
+  — public; GitHub detects the root MIT license.
+- **Video:** no MP4 is committed. Recording drafts and final masters remain only
+  under the ignored local `submission-video/` directory. Publish the final recording
+  produced from `DEMO_SCRIPT.md` (current final-master runtime 2:16) to YouTube after
+  it shows real Codex Site Tool discovery and calls. Use the generated upload-ready
+  caption file at `submission-assets/demo-captions.srt`.
+
+## Run and judge the source
+
+Requirements: Node.js 20.19+ or 22.12+.
+
+```powershell
+npm install
+npm run dev
+npm test
+npm run typecheck
+npm run build
+npm run scan:webmcp
+```
+
+Open the Vite URL directly as a top-level page. Use the ChatGPT desktop in-app
+browser or Google Chrome 149 or later. Chrome testing requires a secure context
+(`http://localhost` or HTTPS) and
+`chrome://flags/#enable-webmcp-testing`. Confirm that nine tools register, invalid
+inputs return corrective errors, the unsafe simulation is revised before staging,
+and no WebMCP tool can activate the visible confirmation control.
+
+Repository history begins with this challenge implementation; no separate
+pre-existing application is evidenced. The access-review domain model, UI, WebMCP
+surface, tests, and documentation are the hackathon work.
