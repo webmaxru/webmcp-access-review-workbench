@@ -10,8 +10,8 @@
   (public; GitHub detects the root MIT license)
 - **Local recording policy:** MP4 drafts and final masters remain only under the
   ignored `submission-video/` directory and are not committed.
-- **Required final video:** public YouTube recording under three minutes showing
-  real Codex Site Tool discovery and calls (current local final-master runtime 2:16)
+- **Published video:** https://youtu.be/q2ydz9Y1_L8 — 2:16, under three minutes,
+  showing real Codex Site Tool discovery and calls
 
 The repository is public and its configured GitHub Pages homepage is serving the
 expected app.
@@ -82,10 +82,9 @@ expected app.
 - Repository publication is complete and the GitHub API reports public visibility.
 - MIT license is included at `LICENSE`.
 - All source required to run the demo is included, excluding installed dependencies.
-- Four clean screenshots and exact captions are included; a validated 2:16
-  narrated final master exists only in ignored `submission-video/`.
+- Four clean screenshots and exact captions are included.
 - GitHub Pages workflow and anonymous HTTPS smoke test passed on 2026-09-03.
-- Upload the validated 2:16 narrated final master publicly to YouTube.
+- The public 2:16 demo is available at https://youtu.be/q2ydz9Y1_L8.
 - Judge credentials: none required.
 
 ## Claims boundary

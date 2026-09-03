@@ -1,5 +1,7 @@
 # Least-Privilege Access Review Workbench
 
+> This project was created using the [WebMCP Agent Skill from the Web AI Agent Skills collection](https://github.com/webmaxru/web-ai-agent-skills).
+
 A small, deterministic WebMCP Challenge submission that turns a SaaS offboarding
 question into an inspectable least-privilege review. The app traces every effective
 path, simulates removal, catches one shared-service breakage, revises the plan,
@@ -17,10 +19,7 @@ WebMCP tool.
 - **Challenge gallery:** https://webmaxru.github.io/webmcp-challenge/
 - **Source repository:** https://github.com/webmaxru/webmcp-access-review-workbench
   (public; GitHub detects the root `LICENSE` as MIT)
-- **Recording status:** a validated 2:16 narrated final master exists only in the
-  ignored local `submission-video/` directory; no MP4 is committed.
-- **Caption upload path:** `submission-assets/demo-captions.srt` (the upload-ready
-  SRT generated for the final master belongs at this committed path).
+- **Demo video:** [Watch the 2:16 narrated Codex/WebMCP walkthrough](https://youtu.be/q2ydz9Y1_L8)
 
 ## Why WebMCP improves this workflow
 

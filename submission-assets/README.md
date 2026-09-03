@@ -1,7 +1,9 @@
 # Submission recording assets
 
-This folder contains the narration and upload-ready captions for the current
-**2 minute 16 second** final master (under the 2:40 ceiling). The
+> This project was created using the [WebMCP Agent Skill from the Web AI Agent Skills collection](https://github.com/webmaxru/web-ai-agent-skills).
+
+This folder contains the final narration and captions for the published
+**2 minute 16 second** demo. The
 shot-by-shot plan, the exact Codex prompts, the operator setup, the on-camera opening
 (fresh session started and sidebar hidden live, then a full top-to-bottom-to-top page
 scan before the prompt), the per-event Browser scroll/cursor choreography, the
@@ -13,8 +15,7 @@ appear in the final take.
 Generated assets:
 
 - `VOICEOVER.txt`
-- `demo-captions.srt` — destination for the generated upload-ready captions that
-  match the current 2:16 final master.
+- `demo-captions.srt` — captions synchronized to the published 2:16 video.
 - `screenshots/01-overview.png`
 - `screenshots/02-staged-review.png`
 - `screenshots/03-confirmation-gate.png`
@@ -84,7 +85,7 @@ Do not imply that WebMCP revoked live access. The confirmation changes only the
 mocked in-memory fixture, and all identities, applications, tokens, and findings are
 synthetic.
 
-The remaining media blocker is publication: a validated 2:16 narrated final
-master showing real Codex Site Tool discovery and calls exists only in ignored
-`submission-video/`. Upload it publicly to YouTube and attach
-`demo-captions.srt`.
+Published demo: https://youtu.be/q2ydz9Y1_L8
+
+The local final master remains only in ignored `submission-video/`;
+`demo-captions.srt` is kept as the final caption source.

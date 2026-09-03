@@ -80,11 +80,7 @@ a transparent least-privilege review pattern.
   and unrestricted through September 21, 2026 at 5:00 p.m. PT.
 - **Source:** https://github.com/webmaxru/webmcp-access-review-workbench
   — public; GitHub detects the root MIT license.
-- **Video:** no MP4 is committed. Recording drafts and final masters remain only
-  under the ignored local `submission-video/` directory. Publish the final recording
-  produced from `DEMO_SCRIPT.md` (current final-master runtime 2:16) to YouTube after
-  it shows real Codex Site Tool discovery and calls. Use the generated upload-ready
-  caption file at `submission-assets/demo-captions.srt`.
+- **Video:** https://youtu.be/q2ydz9Y1_L8
 
 ## YouTube title and description
 
