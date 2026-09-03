@@ -3,8 +3,9 @@
 ## Submission links
 
 - **Configured live URL:** https://webmaxru.github.io/webmcp-access-review-workbench/
-  (currently HTTP 404; working deployment remains a blocker and must remain free
-  and unrestricted through September 21, 2026 at 5:00 p.m. PT)
+  (GitHub Pages deployment and anonymous HTTP 200 smoke test passed on
+  2026-09-03; keep it free and unrestricted through September 21, 2026 at
+  5:00 p.m. PT)
 - **Source repository:** https://github.com/webmaxru/webmcp-access-review-workbench
   (public; GitHub detects the root MIT license)
 - **Local recording policy:** MP4 drafts and final masters remain only under the
@@ -12,8 +13,8 @@
 - **Required final video:** public YouTube recording under three minutes showing
   real Codex Site Tool discovery and calls (current local final-master runtime 2:16)
 
-The repository is public. The configured GitHub Pages homepage is not currently
-serving the app, so deployment and a fresh HTTPS smoke test remain owner actions.
+The repository is public and its configured GitHub Pages homepage is serving the
+expected app.
 
 ## Required package
 
@@ -41,7 +42,7 @@ serving the app, so deployment and a fresh HTTPS smoke test remain owner actions
 - [x] Repository-side GitHub Pages deployment workflow
 - [x] MIT license
 - [x] Static social/demo SVG
-- [ ] Working public HTTPS deployment (configured URL currently returns 404)
+- [x] Working public HTTPS deployment anonymously smoke-tested
 
 ## Scenario verification
 
@@ -83,10 +84,7 @@ serving the app, so deployment and a fresh HTTPS smoke test remain owner actions
 - All source required to run the demo is included, excluding installed dependencies.
 - Four clean screenshots and exact captions are included; a validated 2:16
   narrated final master exists only in ignored `submission-video/`.
-- Publish and smoke-test a working HTTPS deployment; the configured Pages URL
-  currently returns 404.
-- In repository **Settings → Pages**, select **GitHub Actions** as the source. The
-  workflow intentionally does not change repository settings through an API.
+- GitHub Pages workflow and anonymous HTTPS smoke test passed on 2026-09-03.
 - Upload the validated 2:16 narrated final master publicly to YouTube.
 - Judge credentials: none required.
 

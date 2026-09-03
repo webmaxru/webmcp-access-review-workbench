@@ -75,11 +75,9 @@ a transparent least-privilege review pattern.
 ## Submission links and publication status
 
 - **Configured live URL:** https://webmaxru.github.io/webmcp-access-review-workbench/
-  — currently returns HTTP 404, so the submission is blocked until a working
-  deployment is published and re-tested. The source includes a standard GitHub
-  Pages Actions workflow; repository Pages must use **GitHub Actions** as its source.
-  Once published, access must remain free and unrestricted through September 21,
-  2026 at 5:00 p.m. PT.
+  — deployed through this public repository's GitHub Pages Actions workflow and
+  anonymously smoke-tested with HTTP 200 on 2026-09-03. Access must remain free
+  and unrestricted through September 21, 2026 at 5:00 p.m. PT.
 - **Source:** https://github.com/webmaxru/webmcp-access-review-workbench
   — public; GitHub detects the root MIT license.
 - **Video:** no MP4 is committed. Recording drafts and final masters remain only

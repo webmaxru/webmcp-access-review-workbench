@@ -11,9 +11,9 @@ WebMCP tool.
 ## Live demo and source
 
 - **Configured live URL:** https://webmaxru.github.io/webmcp-access-review-workbench/
-  — returns HTTP 404 as of the latest readiness audit; a working deployment is
-  still required before submission and must remain free and unrestricted through
-  September 21, 2026 at 5:00 p.m. PT.
+  — deployed through this repository's GitHub Pages workflow and anonymously
+  smoke-tested with HTTP 200 on 2026-09-03. It must remain free and
+  unrestricted through September 21, 2026 at 5:00 p.m. PT.
 - **Challenge gallery:** https://webmaxru.github.io/webmcp-challenge/
 - **Source repository:** https://github.com/webmaxru/webmcp-access-review-workbench
   (public; GitHub detects the root `LICENSE` as MIT)
@@ -183,12 +183,10 @@ rehearsal.
 The application has no iframe deployment path and no runtime cross-origin assets.
 
 The Vite build uses `base: "./"`, so generated assets resolve correctly from a
-project subpath. The public source repository now includes both validation-only CI
-and `.github/workflows/deploy-pages.yml`, which builds `dist` and deploys it with the
-official GitHub Pages actions. In **Settings → Pages**, select **GitHub Actions** as
-the source, then commit/push this workflow or run it manually. The configured URL
-still returned 404 during the latest audit, so re-run the browser checks after the
-first successful deployment.
+project subpath. The public source repository includes both validation-only CI
+and `.github/workflows/deploy-pages.yml`, which builds `dist` and deploys it with
+the official GitHub Pages actions. The Pages workflow and anonymous HTTP 200
+smoke test passed on 2026-09-03.
 
 GitHub Pages does not support repository-defined custom response headers. Use the
 included Vercel or Netlify configuration when `Origin-Agent-Cluster: ?1` and
