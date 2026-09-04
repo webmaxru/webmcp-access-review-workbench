@@ -15,10 +15,17 @@
     "ai_usage": "An external AI agent uses nine WebMCP tools; the app's synthetic calculations are deterministic and contain no embedded model API.",
     "codex_usage": "Repository-documented Codex Site Tools demonstration and testing; source review, automated validation, and submission preparation in this workflow."
   },
-  "current_stage": "prepare-submission",
-  "completed_stages": ["start-hackathon", "review", "resources", "prepare-submission"],
+  "current_stage": "submit-project",
+  "completed_stages": ["start-hackathon", "review", "resources", "prepare-submission", "submit-project"],
   "rules_acknowledged": true,
   "learning": { "status": "not-started", "current_step": "", "completed_steps": [], "plan_file": "", "checklist_file": "" },
-  "submission": { "draft_file": "devpost-submission.md", "status": "drafting" },
-  "next_command": "submit-project"
+  "submission": {
+    "draft_file": "devpost-submission.md",
+    "status": "submitted",
+    "project_id": 1416594,
+    "confirmation_id": 1170329,
+    "url": "https://devpost.com/software/least-privilege-access-review-workbench-remove-risky-access",
+    "submitted_at": "2026-09-04T02:23:24.314-04:00"
+  },
+  "next_command": "hackathon-map"
 }

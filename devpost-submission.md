@@ -247,8 +247,18 @@ Preparation checks on 2026-09-03:
   also reports 136 seconds, not Unlisted, and not Private. Audio and native tool
   calls are supported by the author's project documentation, not replayed here.
 - Earliest local commit: `e3c7cb5`, 2026-09-02, "Build WebMCP least-privilege access review workbench".
-- Full local security scan and final live requirements review remain for
-  `$submit-project`. No external project creation, editing, or upload occurred here.
+- Final live requirements were rechecked on 2026-09-04. The local security scan found
+  no high-confidence secret. Its only generic credential-pattern match is
+  `src/App.tsx:12`: the `api_token` entry in the `kindLabels` display-label map,
+  verified to equal the UI label "API token". The author explicitly confirmed this
+  benign match on 2026-09-04. Security review is cleared; readiness is ready.
+- Thumbnail uploaded: the existing `02-staged-review.png` UI screenshot was uploaded
+  successfully (HTTP 200) as the project thumbnail on 2026-09-04. It represents the
+  project in the hackathon listing. No new capture or image edit was performed.
+- Devpost project 1416594 was created, and WebMCP entry 1170329 was submitted on
+  2026-09-04 at 06:23:24 UTC. A subsequent live project read verified the event's
+  `submitted_at` value and the public project title, video, and live URL.
+- Public project: https://devpost.com/software/least-privilege-access-review-workbench-remove-risky-access
 - Clarify public video copy so actions before confirmation are described as
   simulation/staging, not revocation of real access.
 
